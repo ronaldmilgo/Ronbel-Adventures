@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Sign up page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/107ed761ef.js" crossorigin="anonymous"></script>
+    <script>
+       function validatePassword() {
+            var password = document.getElementsByName("password")[0].value;
+            var confirmPassword = document.getElementsByName("confirm_password")[0].value;
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false; // Prevent the form from submitting
+            }
+            return true; // Allow the form to submit
+        }
+    </script>
+</head>
+<body>
+    <div class="container_sign">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class="flashes">
+                        {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            <form action="/signup" method="post" onsubmit="return validatePassword();">
+                <div class="input-group-sign">
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Username" autocomplete="off" name="name" required>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email" name="email" required>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" name="password" required>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Confirm password" name="confirm_password" required>
+                    </div>
+                </div>
+                <div class="btn-field">
+                    <button type="submit" id="signupBtn">Sign Up</button>
+                </div>
+
+                <p>Already have an account? <a class="login-link" href="{{ url_for('login') }}">Login</a></p>
+            </form>
+        </div>
+    </div>
+    <!-- No need to include signup.js again if the script is included in the head -->
+</body>
+</html>

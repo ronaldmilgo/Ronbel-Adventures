@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Login page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/107ed761ef.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-2">
+        <div class="form-box">
+            <h1 id="title">Login</h1>
+
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+
+            <form action="{{ url_for('login') }}" method="post">
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Username" autocomplete="off" name="username" required>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" name="password" required>
+                    </div>
+                    <p>Don't have an account? <a class="login-link" href="{{ url_for('signup') }}">Sign Up</a></p>
+                </div>
+
+                <div class="btn-field">
+                    <button type="submit" id="loginBtn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

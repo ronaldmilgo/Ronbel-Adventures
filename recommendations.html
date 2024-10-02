@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="body-background">
+    <header class="header-background">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </div>
+        <div class="header-buttons">
+            <button onclick="window.location.href='{{ url_for('homepage') }}'">Home</button>
+            <button onclick="window.location.href='{{ url_for('about') }}'">About</button>
+            <button onclick="window.location.href='{{ url_for('inquiry') }}'">Contact Us</button>
+            <button onclick="window.location.href='{{ url_for('login') }}'">Log out</button>
+        </div>
+    </header>
+
+    <h1>Here is your destination!</h1>
+
+    {% if destinations %}
+        <table style="width:100%; margin-top:20px; border-collapse: collapse;">
+            <tr style="background-color: #f2f2f2; text-align: left;">
+
+                <th style="padding: 15px;">Destination</th>
+                <th style="padding: 15px;">Country</th>
+                <th style="padding: 15px;">Continent</th>
+                <th style="padding: 15px;">Weather Type</th>
+                <th style="padding: 15px;">Temperature Range</th>
+                <th style="padding: 15px;">Humidity</th>
+                <th style="padding: 15px;">Cost</th>
+                <th style="padding: 15px;">Features</th>
+            </tr>
+            {% for destination in destinations %}
+            <tr>
+
+                <td style="padding: 15px;">{{ destination['destination_name'] }}</td>
+                <td style="padding: 15px;">{{ destination['country'] }}</td>
+                <td style="padding: 15px;">{{ destination['continent'] }}</td>
+                <td style="padding: 15px;">{{ destination['weather_type'] }}</td>
+                <td style="padding: 15px;">{{ destination['temperature_min(C)'] }}°C - {{ destination['temperature_max(C)'] }}°C</td>
+                <td style="padding: 15px;">{{ destination['humidity'] }}</td>
+                <td style="padding: 15px;">${{ destination['cost'] }}</td>
+                <td style="padding: 15px;">{{ destination['features'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No destinations with the selected feature.</p>
+    {% endif %}
+
+    <p class="recsfooter-down">© 2023 Ronbel Adventures. All Rights Reserved.</p>
+</body>
+</html>

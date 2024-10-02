@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Intro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
+
+</head>
+
+<body class="body-background">
+    <!-- Header section -->
+    <header class="header-background">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </div>
+        <!-- Buttons leading to specific features -->
+        <div class="header-buttons">
+            <button onclick="window.location.href='{{ url_for('homepage') }}'">Home</button>
+            <button onclick="window.location.href='{{ url_for('about') }}'">About</button>
+            <button onclick="window.location.href='{{ url_for('inquiry') }}'">Contact Us</button>
+            <button onclick="window.location.href='{{ url_for('login') }}'">Log out</button>
+        </div>
+    </header>
+    <div class="welcome-container">
+        <h1>Welcome to Our Adventure!</h1>
+        <p>Discover the beauty of nature with us.</p>
+
+        <!-- Photo Gallery -->
+        <div class="photo-gallery">
+            <img src="{{ url_for('static', filename='photo1.jpg') }}" alt="Logo" class="hover-bounce">
+            <img src="{{ url_for('static', filename='photo2.jpg') }}" alt="Logo" class="hover-bounce">
+            <img src="{{ url_for('static', filename='photo3.jpg') }}" alt="Logo" class="hover-bounce">
+            <img src="{{ url_for('static', filename='photo4.jpg') }}" alt="Logo" class="hover-bounce">
+            <img src="{{ url_for('static', filename='photo5.jpg') }}" alt="Logo" class="hover-bounce">
+            <!-- Add more photos as needed -->
+        </div>
+        <div class="photo-gallery">
+            <img src="{{ url_for('static', filename='photo6.jpg') }}" alt="Logo" class="hover-bounce">
+            <img src="{{ url_for('static', filename='photo7.jpg') }}" alt="Logo" class="hover-bounce">
+            <img src="{{ url_for('static', filename='photo8.jpg') }}" alt="Logo" class="hover-bounce">
+            <img src="{{ url_for('static', filename='photo9.jpg') }}" alt="Logo" class="hover-bounce">
+            <img src="{{ url_for('static', filename='photo10.jpg') }}" alt="Logo" class="hover-bounce">
+        </div>
+
+        <!-- Questionnaire Button -->
+        <a href="{{ url_for('questionnaire') }}">
+            <button>Let's get a questionnaire</button>
+        </a>
+        <p class="footer-down">© 2023 Ronbel Adventures. All Rights Reserved.</p>
+    </div>
+
+
+
+</body>
+</html>

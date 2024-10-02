@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>inquiry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+
+<body class="body-background">
+    <!-- Header section -->
+    <header class="header-background">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </div>
+        <!-- Buttons leading to specific features -->
+        <div class="header-buttons">
+            <button onclick="window.location.href='{{ url_for('homepage') }}'">Home</button>
+            <button onclick="window.location.href='{{ url_for('about') }}'">About</button>
+            <button onclick="window.location.href='#'">Contact Us</button>
+            <button onclick="window.location.href='{{ url_for('login') }}'">Log out</button>
+        </div>
+    </header>
+    <div>
+        <h1>Contact Information</h1>
+        <p><strong>Email:</strong> ronald.milgo@yale.edu </p>
+        <p><strong>Phone:</strong> +1 203 (668) 7385</p>
+
+
+        <p><strong>Address:</strong>
+            <a href="https://maps.app.goo.gl/yhB6pas7Rvk8QALS7" target="_blank">
+            90 Prospect Street, New Haven, United States</p>
+            </a>
+
+        <a href="https://www.instagram.com/abel__817/" target="_blank">
+            <img src="{{ url_for('static', filename='Instagram.png') }}" alt="Logo" class="social-logo">
+
+        </a>
+
+        <!-- Gmail Link (Usually for sending an email) -->
+        <a href="mailto:abel.adugna@yale.edu" target="_blank">
+            <img src="{{ url_for('static', filename='gmail.png') }}" alt="Logo" class="social-logo">
+        </a>
+
+        <!-- telegram link -->
+        <a href="https://web.telegram.org/a/#6310979640" target="_blank">
+            <img src="{{ url_for('static', filename='telegram.png') }}" alt="Logo" class="social-logo">
+        </a>
+
+        <!-- Twitter Link -->
+        <a href="https://www.twitter.com/yourusername" target="_blank">
+            <img src="{{ url_for('static', filename='twitter.png') }}" alt="Logo" class="social-logo">
+        </a>
+
+    </div>
+
+
+    <!-- 'Get Started' button -->
+    <a href="{{ url_for('intro') }}" class="get-started-button">Get Started</a>
+    <p class="footer-down">© 2023 Ronbel Adventures. All Rights Reserved.</p>
+
+
+</body>
+</html>

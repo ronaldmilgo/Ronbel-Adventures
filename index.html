@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>homepage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="body-background1">
+    <!-- Header section -->
+    <header class="header-background">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </div>
+
+        <div class="hello-username">
+            <h1>Hello, {{ name }}</h1>
+        </div>
+
+
+
+        <!-- Buttons leading to specific features -->
+        <div class="header-buttons">
+            <button onclick="window.location.href='#'">Home</button>
+            <button onclick="window.location.href='{{ url_for('about') }}'">About</button>
+            <button onclick="window.location.href='{{ url_for('inquiry') }}'">Contact Us</button>
+            <button onclick="window.location.href='{{ url_for('login') }}'">Log out</button>
+
+        </div>
+    </header>
+
+    <div class="welcome-text">
+
+        <p>Are you ready to explore the wonders of the world?
+            With Ronbel Adventures, the world is not just a place to see, but a masterpiece to be
+            experienced. Ready to take the first step in your next great adventure with Ronbel Adventures?</p>
+    </div>
+
+    <!-- 'Get Started' button -->
+    <a href="{{ url_for('intro') }}" class="get-started-button">Get Started</a>
+
+
+
+
+    <p class="footer-down">© 2023 Ronbel Adventures. All Rights Reserved.</p>
+
+
+
+</body>
+</html>

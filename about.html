@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>about</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="body-background">
+    <!-- Header section -->
+    <header class="header-background">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </div>
+        <!-- Buttons leading to specific features -->
+        <div class="header-buttons">
+            <button onclick="window.location.href='{{ url_for('homepage') }}'">Home</button>
+            <button onclick="window.location.href='#'">About</button>
+            <button onclick="window.location.href='{{ url_for('inquiry') }}'">Contact Us</button>
+            <button onclick="window.location.href='{{ url_for('login') }}'">Log out</button>
+        </div>
+    </header>
+
+
+    <div class="image-section" style="background-image: url('background3.jpg');">
+        <h1>About!</h1>
+        <p>Welcome to Ronbel Adventures, your personalized travel destination finder! At Ronbel Adventures, we believe that every journey should be as unique as the traveler embarking upon it. Our platform is designed to curate unforgettable travel experiences tailored precisely to your preferences.
+
+            How do we do it? Through a meticulously crafted questionnaire that delves into your travel preferences, interests, and desires. We understand that each traveler seeks something different - be it a serene beach getaway, an adventurous mountain expedition, a cultural exploration, or a food lover's paradise. Our comprehensive questionnaire covers it all, ensuring that your preferences are at the heart of the journey we create for you.
+
+            Once you've shared your preferences with us, our cutting-edge algorithm works its magic, sifting through a vast database of destinations, activities, and experiences. It then generates a curated list of places perfectly aligned with your tastes and desires.
+
+            Whether you seek hidden gems off the beaten path or iconic landmarks bustling with energy, Ronbel Adventures has you covered. We're committed to presenting you with a diverse array of destinations, each promising to make your travel dreams a reality.
+
+            But our journey doesn't end there. We understand that travel is an ever-evolving experience. Therefore, we continually update our database, keeping up with new destinations, trends, and experiences. This ensures that Ronbel Adventures remains your trusted companion in exploring the world, no matter where your wanderlust takes you.
+
+            Our mission is simple - to transform your travel aspirations into unforgettable experiences. So, join us at Ronbel Adventures, and let's embark on a journey customized just for you. Start your adventure today and discover the world in a way that's uniquely yours.</p>
+
+
+
+        </div>
+        <a href="{{ url_for('intro') }}" class="get-started-button">Get Started</a>
+    <p class="footer-down">© 2023 Ronbel Adventures. All Rights Reserved.</p>
+
+
+</body>
+</html>
+
+
+

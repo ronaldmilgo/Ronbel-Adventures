@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Questionnaries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</headr>
+
+<body class="questionnaire-background">
+    <!-- Header section -->
+    <header class="header-background">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </div>
+        <!-- Buttons leading to specific features -->
+        <div class="header-buttons">
+          <button onclick="window.location.href='{{ url_for('homepage') }}'">Home</button>
+          <button onclick="window.location.href='{{ url_for('about') }}'">About</button>
+          <button onclick="window.location.href='{{ url_for('inquiry') }}'">Contact Us</button>
+          <button onclick="window.location.href='{{ url_for('login') }}'">Log out</button>
+        </div>
+    </header>
+
+
+    </head>
+    <body>
+
+    <h1>Travel Destination Preference Questionnaire</h1>
+
+    <form action="/recommendations" method="POST">
+      <h3>1. What type of weather do you prefer?</h3>
+      <select name="weatherType">
+        <option disabled selected value=""></option>
+        <option value="Cold">Cold</option>
+        <option value="Dry">Dry</option>
+        <option value="Hot">Hot</option>
+        <option value="Humid">Humid</option>
+        <option value="Mild">Mild</option>
+        <option value="Rainy">Rainy</option>
+        <option value="Snowy">Snowy</option>
+        <option value="Sunny">Sunny</option>
+        <option value="Varied">Varied</option>
+        <option value="Warm">Warm</option>
+
+      </select>
+
+      <h3>2. What temperature range do you prefer for your destination?</h3>
+      <select name="temperatureRange">
+        <option disabled selected value=""></option>
+        <option value="Below 0°C">Below 0°C</option>
+        <option value="0-10°C">0-10°C</option>
+        <option value="10-20°C">10-20°C</option>
+        <option value="20-30°C">20-30°C</option>
+        <option value="Above 30°C">Above 30°C</option>
+      </select>
+
+      <h3>3. Which continent would you prefer to travel to?</h3>
+      <select name="continent">
+        <option disabled selected value=""></option>
+        <option value="South America">South America</option>
+        <option value="Oceania">Oceania</option>
+        <option value="Africa">Africa</option>
+        <option value="North America">North America</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+
+      </select>
+
+
+
+      <h3>4. What level of humidity would you prefer?</h3>
+      <select name="humidity">
+        <option disabled selected value=""></option>
+        <option value="Below 40%">Below 40%</option>
+        <option value="40-50%">40-50%</option>
+        <option value="50-60%">50-60%</option>
+        <option value="60-70%">60-70%</option>
+        <option value="70-80%">70-80%</option>
+        <option value="Above 80%">Above 80%</option>
+      </select>
+
+      <h3>5. What is your preferred cost range for the trip (in USD)?</h3>
+      <select name="costRange">
+        <option disabled selected value=""></option>
+        <option value="Below 1500">Below 1500</option>
+        <option value="1500-1750">1500-1750</option>
+        <option value="1750-2000">1750-2000</option>
+        <option value="Above 2000">Above 2000</option>
+      </select>
+
+      <h3>6. What type of features do you enjoy the most?</h3>
+      <select name="features">
+        <option disabled selected value=""></option>
+        <option value="Ancient Ruins">Ancient Ruins</option>
+        <option value="Archaeological sites">Archaeological sites</option>
+        <option value="Architecture">Architecture</option>
+        <option value="Art Museums">Art Museums</option>
+        <option value="Bazaars">Bazaars</option>
+        <option value="Beaches">Beaches</option>
+        <option value="Castles">Castles</option>
+        <option value="Cathedral">Cathedral</option>
+        <option value="City Life">City Life</option>
+        <option value="Coffee Culture">Coffee Culture</option>
+        <option value="Culture">Culture</option>
+        <option value="Churches">Churches</option>
+        <option value="Desert Safari">Desert Adventures</option>
+        <option value="Festivals">Festivals</option>
+        <option value="Gardens">Gardens</option>
+        <option value="Historical Sites">Historical Sites</option>
+        <option value="lakes">lakes</option>
+        <option value="Markets">Markets</option>
+        <option value="Mosques">Mosques</option>
+        <option value="Museums">Museums</option>
+        <option value="Nature">Nature</option>
+        <option value="Nightlife">Nightlife</option>
+        <option value="Palaces">Palaces</option>
+        <option value="Pyramids">Pyramids</option>
+        <option value="Palaces">Palaces</option>
+        <option value="Scenic views">Scenic views</option>
+        <option value="Temples">Temples</option>
+        <option value="Volcanic Landscapes">Volcanic Landscapes</option>
+        <option value="wildlife">wildlife</option>
+        <option value="waterfront">waterfront</option>
+        <option value="Winter Carnival">Winter Carnival</option>
+
+      </select>
+
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    <p class="footer-down">© 2023 Ronbel Adventures. All Rights Reserved.</p>
+
+</body>
+</html>
