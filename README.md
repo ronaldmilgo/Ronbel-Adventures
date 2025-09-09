@@ -4,4 +4,4 @@ To ensure user control, the Log Out link gracefully logs users out of their sess
 This questionnaire serves a critical function, aiding in identifying user preferences through a series of thoughtfully designed questions. Upon completion and submission, our state-of-the-art algorithm springs into action. Although limited by the size of our database, we focus on three key questions: cost, continent, and desired features.
 By utilizing these three criteria for database filtration, we ensure a balanced approach. While using all questions might narrow down the options excessively, our approach strives to deliver meaningful destination suggestions. In scenarios where no destination meets the specified criteria, our website tactfully communicates this by displaying a message indicating that no suitable destinations were found. This transparent approach ensures users understand the limitations while appreciating the website's efforts to cater to their preferences.
 
-YouTube link: https://youtu.be/C1rGt5r6ZzQ
+
